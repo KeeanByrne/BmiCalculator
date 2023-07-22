@@ -40,7 +40,7 @@
 
             <StackPanel Grid.Row="2" Grid.RowSpan="2" Background="#B4CDAB">
 
-                <StackPanel Orientation="Vertical">
+                
 
                     <RadioButton x:Name="HomeButton"
                              Content="Home"
@@ -51,22 +51,22 @@
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"/>
 
-                <RadioButton x:Name="CalculatorButton"
-                             Content="Calculator"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked_1"
-                             Command="{Binding CalculatorViewCommand}"/>
+                    <RadioButton x:Name="CalculatorButton"
+                                 Content="Calculator"
+                                 Height="50"
+                                 Foreground="White"
+                                 FontSize="14"
+                                 Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked_1"
+                                 Command="{Binding CalculatorViewCommand}"/>
 
-                <RadioButton x:Name="LogoutButton"
-                             Content="Logout"
-                             Height="50"
-                             Foreground="White"
-                             FontSize="14"
-                             Style="{StaticResource MenuButtonTheme}"
-                             Margin="0,250,0,0" Checked="RadioButton_Checked_2"
-                             />
+                    <RadioButton x:Name="LogoutButton"
+                                 Content="Logout"
+                                 Height="50"
+                                 Foreground="White"
+                                 FontSize="14"
+                                 Style="{StaticResource MenuButtonTheme}"
+                                 Margin="0,250,0,0" Checked="RadioButton_Checked_2"/>
+                                
             </StackPanel>
 
             <ContentControl Grid.Row="1"
@@ -74,7 +74,7 @@
                             Grid.RowSpan="3"
                             Margin="10"
                             Content="{Binding CurrentView}"/>
-            </StackPanel>
+            
 
 
         </Grid>

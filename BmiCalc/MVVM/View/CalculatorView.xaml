@@ -6,12 +6,70 @@
              xmlns:local="clr-namespace:BmiCalc.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="#1B1B1B">
-    <Grid>
-            
-        
-        
-        
-        
-    </Grid>
+             Background="#89CFF0">
+    <StackPanel Orientation="Horizontal">
+        <Border     Width="400"
+                    Height="200"
+                    Margin="15">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                    <GradientStop Color="#3494db" Offset="0.0"/>
+                    <GradientStop Color="#1f76cc" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Border.Clip>
+                <RectangleGeometry RadiusX="10"
+                                       RadiusY="10"
+                                       Rect="0,0,400,200"/>
+            </Border.Clip>
+
+            <Grid>
+                <StackPanel>
+                    <TextBlock Text="This Is Where Your BMI Will Be Calculated"
+                                   Foreground="White"
+                                   FontSize="17"
+                                   Margin="20,10,10,0"/>
+
+                    <TextBox Width="250"
+                             Height="47"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="20"
+                             Style="{StaticResource ModernTextBox}"/>
+
+                    <TextBox Width="250"
+                             Height="47"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Margin="20,-20"
+                             Style="{StaticResource ModernTextBox1}"/>
+
+                    <Button Width="100"
+                            Height="30"
+                            Background="Red"
+                            Content="Calculate"
+                            />
+
+                </StackPanel>
+            </Grid>
+
+
+        </Border>
+
+        <Border
+                    Width="200"
+                    Height="200"
+                    CornerRadius="10"
+                    Margin="45,0,0,0">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,2">
+                    <GradientStop Color="#ffc554" Offset="0.0"/>
+                    <GradientStop Color="#ff37ba" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </StackPanel>
 </UserControl>
