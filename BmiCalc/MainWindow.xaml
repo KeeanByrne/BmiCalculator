@@ -3,10 +3,80 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModel="clr-namespace:BmiCalc.MVVM.ViewModel"
         xmlns:local="clr-namespace:BmiCalc"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="303">
-    <Grid>
-        <Frame x:Name="mainFrame" NavigationUIVisibility="Hidden" />
-    </Grid>
+        Title="MainWindow" Height="500" Width="900" ResizeMode="NoResize" Background="Transparent"
+        AllowsTransparency="True" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
+
+    <Border Background="#89CFF0" CornerRadius="20" BorderThickness="2" BorderBrush="#B0E2FF"
+            Padding="20" MouseDown="Border_MouseDown">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="34.667"/>
+                <RowDefinition Height="10.333"/>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="286*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="BMI MATE"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="White"
+                       FontSize="22">
+
+            </TextBlock>
+
+
+            <StackPanel Grid.Row="2" Grid.RowSpan="2" Background="#B4CDAB">
+
+                <StackPanel Orientation="Vertical">
+
+                    <RadioButton x:Name="HomeButton"
+                             Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
+                <RadioButton x:Name="CalculatorButton"
+                             Content="Calculator"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}" Checked="RadioButton_Checked_1"
+                             Command="{Binding CalculatorViewCommand}"/>
+
+                <RadioButton x:Name="LogoutButton"
+                             Content="Logout"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Margin="0,250,0,0" Checked="RadioButton_Checked_2"
+                             />
+            </StackPanel>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1" 
+                            Grid.RowSpan="3"
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
+            </StackPanel>
+
+
+        </Grid>
+    </Border>
 </Window>

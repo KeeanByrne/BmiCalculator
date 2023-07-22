@@ -13,28 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace BmiCalc
+namespace BmiCalc.MVVM.View
 {
-    
-    public partial class LoginPage : UserControl
+    /// <summary>
+    /// Interaction logic for HomeView.xaml
+    /// </summary>
+    public partial class HomeView : UserControl
     {
-        MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-        public LoginPage()
+        public HomeView()
         {
             InitializeComponent();
-
-        }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-
-            
-      
-        }
-
-        private void txtUsername_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
